@@ -2,7 +2,7 @@
   "name": "hids",
   "version": "1.0.0",
   "description": "Application de gestion de l'inventaire",
-  "author": "Bradley Johnson",
+  "author": "Bradley Johnson et Sarah Zenati Johnson",
   "scripts": {
     "build": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run serveur --prefix serveur\"   \" npm run serve --prefix client \"  ",
