@@ -8,6 +8,7 @@ export default new Vuex.Store({
   // initialisation des données
   state: {
     produits: [],
+    produit: {},
     status: '',
     token: localStorage.getItem('token') || '',
     user: {}
@@ -45,7 +46,7 @@ export default new Vuex.Store({
   actions: {
     getProduits: ({ commit }) => {
       axios.get('http://localhost:4000/api/produits')
-      .then((response) => { commit('setProduits', response.data) })
+        .then((response) => { commit('setProduits', response.data) })
     },
     login({ commit }, user) {
       return new Promise((resolve) => {

@@ -2,25 +2,28 @@
   "name": "hids",
   "version": "1.0.0",
   "description": "Application de gestion de l'inventaire",
-  "main": "serveur/serveur.js",
+  "author": "Bradley Johnson",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run serveur --prefix serveur\"   \" npm run serve --prefix client \"  ",
     "start": "npm run serveur --prefix /serveur",
-    "build": "npm install --prefix client && npm run build --prefix client"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LouqHI/webApp.git"
+  "main": "serveur/serveur.js",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "core-js": "^3.8.3"
   },
-  "author": "Bradley Johnson",
-  "license": "ISC",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0"
+  },
   "bugs": {
     "url": "https://github.com/LouqHI/webApp/issues"
   },
   "homepage": "https://github.com/LouqHI/webApp#readme",
-  "dependencies": {
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "concurrently": "^6.0.0"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LouqHI/webApp.git"
   }
 }

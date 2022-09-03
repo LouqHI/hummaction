@@ -19,28 +19,31 @@
       >
         <v-col v-for="produit in produits" v-bind:key="produit.nom">
           <div>
-            <template>
-              <v-card class="mx-auto" max-width="344" elevation="7">
-                <v-card-text>
-                  <h2 class="title primary--text">
-                    {{ produit.nom }}
-                  </h2>
-                  Catégorie: {{ produit.categorie }}
-                </v-card-text>
+            <v-hover>
+              <template v-slot:default="{ hover }">
+                <v-card class="mx-auto" max-width="344" elevation="7">
+                  <v-card-text>
+                    <h2 class="title primary--text">
+                      {{ produit.nom }}
+                    </h2>
+                    Catégorie: {{ produit.categorie }}
+                  </v-card-text>
 
-                <v-card-title
-                  primary-title
-                  v-if="produit.qtBM && produit.qtParis != 0"
-                >
-                  Paris:{{ produit.qtParis }}
-                  <br />
-                  Blanc-mesnil:{{ produit.qtBM }}
-                </v-card-title>
-                <v-card-title v-else>
-                  <v-alert type="warning" class="alert"> Stock vide </v-alert>
-                </v-card-title>
-              </v-card>
-            </template>
+                  <v-card-title primary-title>
+                    Paris:{{ produit.qtParis }}
+                    <br />
+                    Blanc-mesnil:{{ produit.qtBM }}
+                  </v-card-title>
+                  <v-fade-transition>
+                    <v-overlay v-if="hover" absolute color="#036358">
+                      <v-btn :to="`/produits/${produit._id}`">
+                        Voir produit
+                      </v-btn>
+                    </v-overlay>
+                  </v-fade-transition>
+                </v-card>
+              </template>
+            </v-hover>
           </div>
         </v-col>
       </v-row>
