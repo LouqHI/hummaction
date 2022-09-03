@@ -6,7 +6,7 @@ const cors = require('cors')
 
 //Import Routes
 const routesProduit = require('./routes/produit')
-const routesUser = require('./routes/user')
+//const routesUser = require('./routes/user')
 
 //Connexion à la DB
 //Ne pas oublier la variable d'environnement MONGO_URI
